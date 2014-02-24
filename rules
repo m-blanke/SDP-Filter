@@ -1,0 +1,2 @@
+iptables -t mangle -A POSTROUTING -p udp --dport 9875 -j NFQUEUE --queue-num 0
+
