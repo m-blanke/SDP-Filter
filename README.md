@@ -1,5 +1,5 @@
-SDP-Filter - a lightweight SDP filter
-=====================================
+A lightweight Session Description Protocol Filter
+=================================================
 
 © by Moritz Blanke 
 
