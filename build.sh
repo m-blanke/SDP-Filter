@@ -1,3 +1,3 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-gcc filter.c -lnetfilter_queue
+gcc filter.c -Wall -lnetfilter_queue --std=gnu11 -o SDP-Filter
