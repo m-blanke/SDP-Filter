@@ -1,11 +1,19 @@
-SDP-Filter - a lightweight SDP filter by Moritz Blanke
-====================================================== 
+SDP-Filter - a lightweight SDP filter
+=====================================
+
+© by Moritz Blanke 
 
 
 Description:
 ------------
 
 SDP-Filter provies an easy way to filter the SDP packets on ANY interface
+
+
+License:
+-------
+
+GPLv3, see LICENSE File.
 
 
 Dependencies:
@@ -33,31 +41,34 @@ Configuration:
 
 SDP-Filter provides harcoded configuration through the file config.h
 
-    1] #define QUEUE 42
-    2] #define BLACKLIST true
-    3] #define RULESC 2
-    4] #define RULES\
-    5]	{<verdict>,<attribute>,<filter>,<string>}, \
-    6]	{<verdict>,<attribute>,<filter>,<string>}, \
-    7]
+    [1] #define QUEUE 42
+    [2] #define BLACKLIST true
+    [3] #define RULESC 2
+    [4] #define RULES\
+    [5]	{<verdict>,<attribute>,<filter>,<string>}, \
+    [6]	{<verdict>,<attribute>,<filter>,<string>}, \
+    [7]
 
-1] QUEUE defines the netfilter-queue, as specified above by iptables
+[1] QUEUE defines the netfilter-queue, as specified above by iptables
 
-2] BLACKLIST defines the default behaviour of SDP-Filter:
+[2] BLACKLIST defines the default behaviour of SDP-Filter:
 * true: blacklist - all packets, except for those denied by the rules are forwarded 
 * false: whitelist - all packets, except for those allowed by the rules are dropped
-3] RULESC defines the number of rules specified in 4-6]...
-4-6] RULES defines the rules by which SDL-Filter filters
-* verdict: ALLOW||DISALLOW specifies which action has to be taken if a rule matches
+
+[3] RULESC defines the number of rules specified in 4-6]...
+
+[4-6] RULES defines the rules by which SDL-Filter filters
+
+* verdict: ALLOW || DISALLOW specifies which action has to be taken if a rule matches
 * attribute: "string" specifies the attribute which is to be tested. e.g. "a=x-plgroup", "s=" or "m=video". See RFC4566 (or use Wireshark) for a list of viable attributes
-* filter: IS||BEGINS_WITH||ENDS_WITH||CONTAINS string operator which is used to compare string to the value of the attribute.
+* filter: IS || BEGINS_WITH || ENDS_WITH || CONTAINS string operator which is used to compare string to the value of the attribute.
 * string: "string" specifies the value which is compared by above operators against the specified attribute
-7] The C-Preprocessor dictates: if the last rule 6] ends with \ an empty line has to follow
+
+[7] The C-Preprocessor dictates: if the last rule 6] ends with \ an empty line has to follow
 
 	
 Example:
 --------
 
     {ALLOW,"s=",BEGINS_WITH,"[Radio] "}, \
-
 
