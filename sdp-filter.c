@@ -84,8 +84,8 @@ void init(){
 		exit(1);
 	}
 
-	DBG("binding this socket to queue '42'\n");
-	qh = nfq_create_queue(h,  42, &callback, NULL);
+	DBG("binding this socket to queue '%d'\n",QUEUE);
+	qh = nfq_create_queue(h,  QUEUE, &callback, NULL);
 	if (!qh) {
 		fprintf(stderr, "error during nfq_create_queue()\n");
 		exit(1);
