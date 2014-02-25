@@ -57,7 +57,7 @@ SDP-Filter provides harcoded configuration through the file config.h
 
 [3] RULESC defines the number of rules specified in 4-6]...
 
-[4-6] RULES defines the rules by which SDL-Filter filters
+[4-6] RULES defines the rules by which SDP-Filter filters
 
 * verdict: ALLOW || DISALLOW specifies which action has to be taken if a rule matches
 * attribute: "string" specifies the attribute which is to be tested. e.g. "a=x-plgroup", "s=" or "m=video". See RFC4566 (or use Wireshark) for a list of viable attributes
