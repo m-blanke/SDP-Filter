@@ -1,4 +1,4 @@
-A lightweight Session Description Protocol Filter
+A lightweight SDP Filter
 =================================================
 
 © by Moritz Blanke 
@@ -7,7 +7,7 @@ A lightweight Session Description Protocol Filter
 Description:
 ------------
 
-SDP-Filter provies an easy way to filter the SDP packets on ANY interface
+SDP-Filter provies an easy way to filter SDP (Session Description Protocol) packets
 
 
 License:
